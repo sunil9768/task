@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Loginuser;
+use App\Models\Addressuser;
+ use DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $a=Loginuser::with('UserDetails')->get();
+  
+        
+        return view('index',compact('a'));
+         
     }
 }

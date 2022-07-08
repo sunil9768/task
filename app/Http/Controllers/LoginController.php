@@ -121,7 +121,7 @@ class LoginController extends Controller
      */
     public function edit($id)
     {
-        $data=Loginuser::find($id);
+         
     }
 
     /**

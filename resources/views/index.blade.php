@@ -4,8 +4,21 @@
 
   
 <div class="container">
-    
    
+   <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    {{ __('You are logged in!') }}<br><br>
+
     <a href="/userlogin/create"><button class="btn btn-primary">Add New</button></a>
 
 
@@ -38,10 +51,10 @@
                         @method('delete')
 
                         
-                         <button type="submit">Delete</button>
+                         <button class="btn btn-success" type="submit">Delete</button>
 
                      </form>
-                       <a href="/userlogin/{{$value->id}}/edit">Edit</a>
+                      
                      </td>
                    
             
@@ -53,6 +66,10 @@
 
 
     </table>
+                </div>
+            </div>
+        </div>
+    </div>
  </div>
 
 
